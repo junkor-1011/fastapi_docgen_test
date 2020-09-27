@@ -22,11 +22,14 @@ LOCATION_SOURCE = str(
 LOCATION_BUILD = str(
     pathlib.Path(__file__).resolve().parent / "build"
 )
+# LOCATION_TARGET = str(
+#     pathlib.Path(__file__).resolve().parent
+# )
 
 
 if __name__ == "__main__":
     # import subprocess
-    cmd_api = f"sphinx-apidoc -f -o {LOCATION_SOURCE} {LOCATION_PYDOCUMENTS}"
+    cmd_api = f"sphinx-apidoc -e -f -o {LOCATION_SOURCE} {LOCATION_PYDOCUMENTS}"
     print(cmd_api)
 
     cmd_doc = f"sphinx-build -b html {LOCATION_SOURCE} {LOCATION_BUILD}"
